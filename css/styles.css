@@ -56,11 +56,6 @@ body {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.social-link:hover,
-.social-link:focus {
-  fill: #ffffff;
-  background-color: var(--accent-color);
-}
 
 /* ============= COMPONENTS ============= */
 .section-title {
@@ -102,8 +97,14 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: fill var(--transformation-time) var(--time-allocation-function),
+    background-color var(--transformation-time) var(--time-allocation-function);
 }
-
+.social-link:hover,
+.social-link:focus {
+  fill: #ffffff;
+  background-color: var(--accent-color);
+}
 /* =====================HEADER=======================*/
 .header {
   border-bottom: 1px solid #ececec;
@@ -190,11 +191,10 @@ body {
 }
 .current::after {
   position: absolute;
-
+  display: block;
   bottom: 0px;
   left: 0px;
   content: '';
-  display: block;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -247,7 +247,8 @@ body {
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color var(--transformation-time) var(--time-allocation-function);
+  transition: background-color var(--transformation-time) var(--time-allocation-function),
+    box-shadow var(--transformation-time) var(--time-allocation-function);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -304,7 +305,24 @@ body {
   margin-left: calc(-1 * var(--basic-content-indentation));
 }
 .servises-item {
+  position: relative;
   margin-left: var(--basic-content-indentation);
+}
+.servises-description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding: 27px 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: var(--master-leter-spacing);
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 /* ==========================TEAM============================== */
 .team-section {
@@ -374,6 +392,8 @@ body {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: fill var(--transformation-time) var(--time-allocation-function),
+    background-color var(--transformation-time) var(--time-allocation-function);
 }
 .regular-clients-link:hover,
 .regular-clients-link:focus {
@@ -409,6 +429,7 @@ body {
   line-height: 1.7;
   letter-spacing: var(--master-leter-spacing);
   color: var(--secondary-text-color);
+  transition: color var(--transformation-time) var(--time-allocation-function);
 }
 .address-item:not(:last-child) {
   margin-bottom: 9px;
@@ -420,6 +441,7 @@ body {
   line-height: 1.7;
   letter-spacing: var(--master-leter-spacing);
   color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transformation-time) var(--time-allocation-function);
 }
 
 .location:hover,
